@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const IndividualPage = () => {
   const [individualProducts, setIndividualProduct] = useState(null);
-  const [targetImage, setTargetImage] = useState(false);
+  const [targetImage] = useState(false);
 
   const itemid = useParams();
 
