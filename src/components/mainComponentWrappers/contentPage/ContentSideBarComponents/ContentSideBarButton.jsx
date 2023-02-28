@@ -17,9 +17,9 @@ export const ContentSideBarButton = (props) => {
         {props.asideTextHeader}{" "}
         <span className="headerButton">
           {showList ? (
-            <FontAwesomeIcon icon="fa-angle-down" />
-          ) : (
             <FontAwesomeIcon icon="fa-angle-up" />
+          ) : (
+            <FontAwesomeIcon icon="fa-angle-down" />
           )}
         </span>
       </button>

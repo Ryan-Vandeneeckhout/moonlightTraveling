@@ -20,9 +20,10 @@ export const useAPICall = () => {
       .then(function (response) {
         setDataResponse(response.data);
         console.log(response.data);
+        setError(false);
       })
       .catch(function (error) {
-        setError("Something went wrong.");
+        setError(true);
       });
   };
   return { error, APICall, dataResponse };

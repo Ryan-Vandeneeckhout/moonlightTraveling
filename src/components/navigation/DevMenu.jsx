@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { SiteName } from "../overlays/siteName";
 
 const DevMenu = (props) => {
   // Controls the opening and closing of the dev menu - located in the upper right corner of the navigation component //
@@ -33,9 +34,9 @@ const DevMenu = (props) => {
         {/*Closed hover states */}
       </button>
       <h3>
-        Bite-Sized Traveling{" "}
+        {SiteName}
         <span>
-          <FontAwesomeIcon icon="fa-cookie-bite" />
+          <FontAwesomeIcon icon="fa-moon" />
         </span>
       </h3>
     </div>

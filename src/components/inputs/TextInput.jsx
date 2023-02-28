@@ -18,7 +18,7 @@ const TextInput = (props) => {
         aria-label="builder-Name-Input"
         type="text"
         onChange={handleUserInput}
-        className="hoverYes"
+        className="textinput"
         placeholder={props.placeholderInput}
         onKeyDown={callFunction}
       />

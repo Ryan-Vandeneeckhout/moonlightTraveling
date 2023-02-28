@@ -3,20 +3,29 @@ $fontMedium: clamp(1rem, 0.5135rem + 2.1622vw, 3rem);
 $fontSmall: 20px;
 $fontForm: 26px;
 
-$fontHeadingType: "Raleway", Arial, Helvetica, sans-serif;
-$fontBodyType: "Raleway", Arial, Helvetica, sans-serif;
+$fontHeadingType: "Archivo", Arial, Helvetica, sans-serif;
+$fontBodyType: "Roboto", Arial, Helvetica, sans-serif;
 
 h1 {
   font-size: $fontLarge;
   text-transform: uppercase;
-  font-family: "Raleway";
+  font-family: "Archivo";
 }
 h2 {
-  font-family: "Beas Neue";
+  font-family: "Archivo";
   font-size: $fontMedium;
   text-transform: uppercase;
 }
 
+h3 {
+  font-family: "Archivo";
+  font-size: $fontSmall;
+  text-transform: uppercase;
+}
+
+p, input, h4, label, button {
+  font-family: $fontBodyType;
+}
 html {
   --navColorBackground: hsl(0, 0%, 4%);
   --navColorButtonHover: hsl(0, 0%, 9%);

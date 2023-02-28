@@ -1,4 +1,5 @@
 import InputLinked from "../inputs/InputLinked";
+import { SiteName } from "../overlays/siteName";
 
 export const LandingPageSignUpLogin = () => {
   return (
@@ -23,7 +24,7 @@ export const LandingPageSignUpLogin = () => {
             />
           </div>
           <div className="contentContainerB">
-            <h1>Bite Size Traveling</h1>
+            <h1>{SiteName}</h1>
             <h2>The Travel APP - Designed with You in Mind</h2>
           </div>
         </div>

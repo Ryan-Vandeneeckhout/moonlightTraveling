@@ -18,7 +18,7 @@ import {
   faBuildingColumns,
   faArrowRightFromBracket,
   faCircleUser,
-  faCookieBite,
+  faMoon,
   faAngleDown,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
@@ -37,7 +37,7 @@ library.add(
   faBuildingColumns,
   faArrowRightFromBracket,
   faCircleUser,
-  faCookieBite,
+  faMoon,
   faSearch
 );
 

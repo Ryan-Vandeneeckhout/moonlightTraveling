@@ -17,7 +17,7 @@ const ContentPage = () => {
   const [, setAPISearchTerm, APISearchTermRef] = useState("Food");
   const [, setAPIOpenClose, APIOpenCloseRef] = useState(null);
   const [, setAPIRating, APIRatingRef] = useState(null);
-  const { APICall, dataResponse } = useAPICall();
+  const { APICall, dataResponse, error } = useAPICall();
 
   const renderData = () => {
     let urlCode = `https://web-production-5976.up.railway.app/https://api.yelp.com/v3/businesses/search`;
@@ -57,7 +57,9 @@ const ContentPage = () => {
   };
 
   const renderContentAPI = () => {
-    if (
+    if (error === true) {
+      return <h3 className="resultsErrorHeading">No Results Found</h3>;
+    } else if (
       dataResponse.businesses === [] ||
       dataResponse.businesses === undefined
     ) {
@@ -81,7 +83,7 @@ const ContentPage = () => {
           })}
         </>
       );
-    } else {
+    } else if (dataResponse.businesses.length > 0) {
       return (
         <>
           {dataResponse.businesses.map((item, index) => {
@@ -107,7 +109,8 @@ const ContentPage = () => {
   };
 
   const renderResultsLength = () => {
-    if (
+    if (error === true);
+    else if (
       dataResponse.businesses === [] ||
       dataResponse.businesses === undefined
     ) {
@@ -126,7 +129,8 @@ const ContentPage = () => {
   };
 
   const renderScrollbar = () => {
-    if (
+    if (error === true);
+    else if (
       dataResponse.businesses === [] ||
       dataResponse.businesses === undefined
     );

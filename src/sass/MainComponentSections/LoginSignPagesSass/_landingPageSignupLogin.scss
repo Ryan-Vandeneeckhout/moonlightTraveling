@@ -20,7 +20,7 @@
 
             .contentContainer {
                 @include FlexColumnCenter;
-                width: 40%;
+                width: 30%;
                 color: white;
                 padding: 2%;
                 text-align: center;
@@ -55,12 +55,18 @@
 
             .contentContainerB {
                 @include FlexColumnCenter;
-                width: 60%;
+                width: 70%;
                 color: white;
                 text-align: center;
+                padding: 5%;
 
                 h1 {
+                    @include textStroke;
                     margin-bottom: 0;
+                    
+                }
+                h2 {
+                    @include textStroke;
                 }
 
             }

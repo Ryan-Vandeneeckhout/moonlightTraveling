@@ -5,6 +5,7 @@ import NextInput from "../../inputs/NextInput.jsx";
 import ProgressBar from "../../inputs/ProgressBar";
 import SideBars from "../../overlays/sideBars";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SiteName } from "../../overlays/siteName";
 
 export default function LandingPage() {
   const LandingPageBackgroundSectionRef = useRef(null);
@@ -108,9 +109,9 @@ export default function LandingPage() {
           <div className="upperContent">
             <div className="titleHolder">
               <h1>
-                Bite Size Traveling{" "}
+                {SiteName}
                 <span>
-                  <FontAwesomeIcon icon="fa-cookie-bite" />
+                  <FontAwesomeIcon icon="fa-moon" />
                 </span>
               </h1>
               <h2>The Complete Travel APP Planner</h2>

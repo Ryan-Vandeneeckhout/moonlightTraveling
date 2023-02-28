@@ -134,3 +134,7 @@
   height: 50vh;
   width: 50vw; 
 }
+@mixin textStroke {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
