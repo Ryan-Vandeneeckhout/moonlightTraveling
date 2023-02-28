@@ -1,0 +1,146 @@
+.sideBars {
+    position: fixed;
+    opacity: 0.2;
+    width: 5vw;
+    min-width: 20px;
+    top: 0;
+    bottom: 0;
+    background-color: transparent;
+    z-index: 2; 
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+.sideBars:hover {
+    background-color: lightgrey;
+}
+.left {
+    left: 0; 
+}
+
+.right {
+    right: 0; 
+}
+
+.LandingPageSection {
+    height: 100vh;
+    width: 100vw;
+    z-index:1;
+
+    .wrapper {
+        @include Maxsize100;
+        @include FlexColumnCenter;
+        justify-content: center;
+        padding: 10%;
+        .content {
+            z-index:99;
+
+        .upperContent {
+            border-radius: 25px;
+            color: white;
+            padding: 3%;
+            text-align: center;
+
+            h1,
+            h2 {
+                font-weight: 900;
+            }
+        }
+
+        .middleContent {
+            @include FlexRowCenter;
+            justify-content: space-evenly;
+            width: 100%;
+
+            .buttonContainer {
+                height: 40px;
+                width: 150px;
+                border-radius: 25px;
+            }
+
+            a {
+                @include Maxsize100;
+                cursor: pointer;
+                display: inline-block;
+                border-radius: 25px;
+            }
+
+            button {
+                @include Maxsize100;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                background-color: white;
+                transition: background-color 2s, color 0.5s;
+                outline: solid black 2px;
+            }
+
+            button:hover {
+                background-color: black;
+                color: white;
+                outline: solid white 2px;
+            }
+        }
+        .bottomContent {
+            @include FlexColumnCenter;
+            justify-content: space-evenly;
+            margin-top: 5%;
+            width: 100%;
+            color: white;
+
+        }
+    }
+    }
+}
+.backgroundImageOverlay {
+    position: fixed; 
+    height: 100vh;
+    width: 100vw;
+    z-index:3;
+    background-color: purple;
+}
+
+.leftAnime {
+    -webkit-transform: translateX(-25%);
+    transform: translateX(-25%);
+    transition: transform 300ms linear;
+}
+.rightAnime {
+    -webkit-transform: translateX(25%);
+    transform: translateX(25%);
+    transition: transform 300ms linear; 
+}
+
+.backgroundMain0 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../../../../public/assets/images/image3.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.backgroundMain1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../../../../public/assets/images/image4.jpg");
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.backgroundMain2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../../../../public/assets/images/image1.webp");
+}
+
+.backgroundMain3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../../../../public/assets/images/image2.webp");
+    background-size: cover;
+    background-position: center;
+}
+
+.backgroundMain4 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../../../../public/assets/images/image3.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.backgroundMain5 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../../../../public/assets/images/image5.jpg");
+    background-size: cover;
+    background-position: center;
+}

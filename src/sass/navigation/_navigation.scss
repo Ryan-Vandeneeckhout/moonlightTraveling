@@ -1,0 +1,84 @@
+.navBarUppersite {
+    @include FlexRowCenter;
+    background-color: var(--navColorBackground);
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 5%;
+    position: fixed;
+    width: 100%; 
+    outline: solid rgb(174, 169, 169) 1px;
+    z-index: 4;
+    .devMenu {
+        @include FlexRowCenter;
+        color: white;
+        button {
+            background-color: var(--devButtonColor);
+            border: none;
+            border-radius: 90%;
+            color: white;
+            height: 45px;
+            transition: all 0.5s ease-in-out;
+            width: 45px;
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: var(--devButtonColorHover); 
+        }
+        h3 {
+            margin-left: 20px;
+            text-transform: uppercase;
+            span{
+                margin-left: 10px;
+            }
+        }
+    }
+    ul {
+    @include UlNormalize;
+    @include FlexRowCenter;
+    justify-content: flex-end;
+    width: 40%;
+    height: 100%;
+
+    li {
+        height: 100%; 
+        width: 150px;
+        a {
+            @include Maxsize100;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: "Raleway", Helvetica, sans-serif;
+            font-weight: 800;
+            border: 4px solid transparent;
+        }
+        &:hover {
+            background-color: var(--navColorButtonHover);
+            cursor: pointer;
+            margin-bottom: -4px;
+            border-bottom: solid 4px goldenrod;
+            
+          }
+          &:hover a {
+            color: white;
+          }
+    }
+    }
+}
+
+.active {
+    color: gold; 
+}
+
+.notActive {
+    color: lightgray;
+}
+
+
+@media only screen and (max-width: 725px) {
+.navBarUppersite ul {
+    display: none;
+}
+}

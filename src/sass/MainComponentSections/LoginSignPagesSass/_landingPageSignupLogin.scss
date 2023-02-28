@@ -1,0 +1,74 @@
+.landingPageSignUpLogin {
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../../../../public/assets/images/image6.jpg");
+    background-size: cover;
+    background-position: center;
+
+    .wrapper {
+        @include Maxsize100;
+        @include FlexColumnCenter;
+        justify-content: center;
+        padding: 10%;
+
+        .content {
+            @include FlexRowCenter;
+            justify-content: space-between;
+            width: 100%;
+            z-index: 9;
+
+            .contentContainer {
+                @include FlexColumnCenter;
+                width: 40%;
+                color: white;
+                padding: 2%;
+                text-align: center;
+                
+                .buttonContainer {
+                    width: clamp(13rem, 12.2987rem + 3.1169vw, 16rem);
+
+                    .logInButton {
+                        background-color: black;
+                        outline: white solid 2px;
+                        color: white;
+                        transition: background-color 0.5s;
+                    }
+
+                    a {
+                        color: white;
+                        display: inline-block;
+                        margin: 16px 0;
+                        padding: clamp(0.5rem, 0.3831rem + 0.5195vw, 1rem);
+                        text-align: center;
+                        text-transform: uppercase;
+                        width: 100%;
+
+                        &:hover {
+                            background-color: darkgreen;
+                            color: white;
+                        }
+                    }
+
+                }
+            }
+
+            .contentContainerB {
+                @include FlexColumnCenter;
+                width: 60%;
+                color: white;
+                text-align: center;
+
+                h1 {
+                    margin-bottom: 0;
+                }
+
+            }
+
+            .contentContainer:first-child {
+                border-right: goldenrod solid 5px;
+            }
+        }
+    }
+
+}

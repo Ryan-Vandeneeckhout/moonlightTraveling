@@ -1,0 +1,66 @@
+$fontLarge: clamp(2rem, 1.5135rem + 2.1622vw, 4rem);
+$fontMedium: clamp(1rem, 0.5135rem + 2.1622vw, 3rem);
+$fontSmall: 20px;
+$fontForm: 26px;
+
+$fontHeadingType: "Raleway", Arial, Helvetica, sans-serif;
+$fontBodyType: "Raleway", Arial, Helvetica, sans-serif;
+
+h1 {
+  font-size: $fontLarge;
+  text-transform: uppercase;
+  font-family: "Raleway";
+}
+h2 {
+  font-family: "Beas Neue";
+  font-size: $fontMedium;
+  text-transform: uppercase;
+}
+
+html {
+  --navColorBackground: hsl(0, 0%, 4%);
+  --navColorButtonHover: hsl(0, 0%, 9%);
+  --devButtonColor: hsl(0, 0%, 4%);
+  --devButtonColorHover: #212121; 
+  --sideMenucolor: #212121;
+  
+}
+html[data-theme="violet"] {
+  --devButtonColor: rgb(60, 6, 69);
+  --navColorBackground: white;
+  --sideMenucolor: rgb(206, 162, 198);
+}
+html[data-theme="indigo"] {
+  --devButtonColor: rgb(74, 43, 122);
+  --navColorBackground: white;
+  --sideMenucolor: rgb(148, 85, 244);
+}
+html[data-theme="blue"] {
+  --devButtonColor: rgb(5, 5, 49);
+  --navColorBackground: white;
+  --sideMenucolor: #006cbe;
+}
+html[data-theme="green"] {
+  --devButtonColor: rgb(15, 39, 14);
+  --navColorBackground: white;
+  --navIconBackgroundColor: rgb(15, 39, 14);
+  --sideMenucolor: rgb(15, 39, 14);
+}
+html[data-theme="orange"] {
+  --devButtonColor: rgb(150, 63, 17);
+  --navColorBackground: white;
+  --sideMenucolor: orange;
+}
+html[data-theme="red"] {
+  --devButtonColor: rgb(110, 5, 17);
+  --navColorBackground: white;
+  --sideMenucolor: rgb(95, 8, 8);
+}
+html[data-theme="rainbow"] {
+  --devButtonColor: #360b54;
+  --navColorBackground: rgb(5, 5, 49);
+}
+
+.hidden {
+  display: none;
+}

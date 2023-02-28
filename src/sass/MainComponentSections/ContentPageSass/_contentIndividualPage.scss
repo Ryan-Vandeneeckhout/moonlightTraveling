@@ -1,0 +1,35 @@
+.contentPageIDSection {
+    height: 100%;
+    width: 100%;
+    .wrapper {
+        padding: 5% 10%;
+        @include Maxsize100;
+
+        .content {
+            @include FlexRow;
+            width: 100%;
+        .contentDescription {
+            @include FlexColumn;
+            width: 50%;
+        
+        .hoursContainer {
+            @include FlexRowCenter;
+            width: 100%;
+            justify-content: space-between;
+        }
+        
+        }
+        
+        }
+
+
+        .photobox {
+            width: 50%;
+
+            img {
+                height: 150px;
+                width: 200px;
+            }
+        }
+    }
+}

@@ -1,0 +1,666 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("../../public/assets/fonts/Raleway/static/Raleway-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+h1 {
+  font-size: clamp(2rem, 1.5135rem + 2.1622vw, 4rem);
+  text-transform: uppercase;
+  font-family: "Raleway";
+}
+
+h2 {
+  font-family: "Beas Neue";
+  font-size: clamp(1rem, 0.5135rem + 2.1622vw, 3rem);
+  text-transform: uppercase;
+}
+
+html {
+  --navColorBackground: hsl(0, 0%, 4%);
+  --navColorButtonHover: hsl(0, 0%, 9%);
+  --devButtonColor: hsl(0, 0%, 4%);
+  --devButtonColorHover: #212121;
+  --sideMenucolor: #212121;
+}
+
+html[data-theme=violet] {
+  --devButtonColor: rgb(60, 6, 69);
+  --navColorBackground: white;
+  --sideMenucolor: rgb(206, 162, 198);
+}
+
+html[data-theme=indigo] {
+  --devButtonColor: rgb(74, 43, 122);
+  --navColorBackground: white;
+  --sideMenucolor: rgb(148, 85, 244);
+}
+
+html[data-theme=blue] {
+  --devButtonColor: rgb(5, 5, 49);
+  --navColorBackground: white;
+  --sideMenucolor: #006cbe;
+}
+
+html[data-theme=green] {
+  --devButtonColor: rgb(15, 39, 14);
+  --navColorBackground: white;
+  --navIconBackgroundColor: rgb(15, 39, 14);
+  --sideMenucolor: rgb(15, 39, 14);
+}
+
+html[data-theme=orange] {
+  --devButtonColor: rgb(150, 63, 17);
+  --navColorBackground: white;
+  --sideMenucolor: orange;
+}
+
+html[data-theme=red] {
+  --devButtonColor: rgb(110, 5, 17);
+  --navColorBackground: white;
+  --sideMenucolor: rgb(95, 8, 8);
+}
+
+html[data-theme=rainbow] {
+  --devButtonColor: #360b54;
+  --navColorBackground: rgb(5, 5, 49);
+}
+
+.navBarUppersite {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--navColorBackground);
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 5%;
+  position: fixed;
+  width: 100%;
+  outline: solid rgb(174, 169, 169) 1px;
+  z-index: 4;
+}
+.navBarUppersite .devMenu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+}
+.navBarUppersite .devMenu button {
+  background-color: var(--devButtonColor);
+  border: none;
+  border-radius: 90%;
+  color: white;
+  height: 45px;
+  transition: all 0.5s ease-in-out;
+  width: 45px;
+}
+.navBarUppersite .devMenu button:hover {
+  cursor: pointer;
+  background-color: var(--devButtonColorHover);
+}
+.navBarUppersite .devMenu h3 {
+  margin-left: 20px;
+  text-transform: uppercase;
+}
+.navBarUppersite .devMenu h3 span {
+  margin-left: 10px;
+}
+.navBarUppersite ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 40%;
+  height: 100%;
+}
+.navBarUppersite ul li {
+  height: 100%;
+  width: 150px;
+}
+.navBarUppersite ul li a {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Raleway", Helvetica, sans-serif;
+  font-weight: 800;
+}
+.navBarUppersite ul li:hover {
+  background-color: var(--navColorButtonHover);
+  cursor: pointer;
+}
+.navBarUppersite ul li:hover a {
+  color: white;
+}
+
+.active {
+  color: gold;
+}
+
+.notActive {
+  color: lightgray;
+}
+
+@media only screen and (max-width: 725px) {
+  .navBarUppersite ul {
+    display: none;
+  }
+}
+.sideMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25vw;
+  max-width: 300px;
+  min-width: 250px;
+  position: fixed;
+  left: 0;
+  top: 60px;
+  bottom: 0;
+  z-index: 99;
+  background-color: var(--sideMenucolor);
+  border-right: solid grey 1px;
+  border-top: solid grey 1px;
+}
+.sideMenu .mainMenu {
+  width: 100%;
+}
+.sideMenu button {
+  align-items: center;
+  border: none;
+  height: 60px;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  color: white;
+  background-color: transparent;
+}
+.sideMenu button:hover {
+  background-color: slategray;
+  cursor: pointer;
+  color: black;
+}
+.sideMenu .mainMenuContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.sideMenu .mainMenuContainer button {
+  border: none;
+  height: 60px;
+}
+.sideMenu .mainMenuContainer button svg {
+  margin-left: 15px;
+}
+.sideMenu .mainMenuContainer button:hover {
+  cursor: pointer;
+}
+
+.smoothShown {
+  transform: translateX(-100%);
+  transition: transform 300ms linear;
+}
+
+.smoothClosed {
+  transform: none;
+  transition: transform 300ms linear;
+}
+
+.mainMenu,
+.themeMenu,
+.musicMenu {
+  flex-direction: column;
+}
+
+.fontAweIconSideMenu {
+  margin-right: 10px;
+}
+
+.overlay {
+  background-color: transparent;
+  position: fixed;
+  left: 0;
+  top: 60px;
+  bottom: 40px;
+  right: 0;
+  z-index: 98;
+}
+
+.sideBars {
+  position: fixed;
+  opacity: 0.2;
+  width: 5vw;
+  min-width: 20px;
+  top: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: 2;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.sideBars:hover {
+  background-color: lightgrey;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.LandingPageSection {
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+.LandingPageSection .wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10%;
+}
+.LandingPageSection .wrapper .content {
+  z-index: 99;
+}
+.LandingPageSection .wrapper .content .upperContent {
+  border-radius: 25px;
+  color: white;
+  padding: 3%;
+  text-align: center;
+}
+.LandingPageSection .wrapper .content .upperContent h1,
+.LandingPageSection .wrapper .content .upperContent h2 {
+  font-weight: 900;
+}
+.LandingPageSection .wrapper .content .middleContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.LandingPageSection .wrapper .content .middleContent .buttonContainer {
+  height: 40px;
+  width: 150px;
+  border-radius: 25px;
+}
+.LandingPageSection .wrapper .content .middleContent a {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 25px;
+}
+.LandingPageSection .wrapper .content .middleContent button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 2s, color 0.5s;
+  outline: solid black 2px;
+}
+.LandingPageSection .wrapper .content .middleContent button:hover {
+  background-color: black;
+  color: white;
+  outline: solid white 2px;
+}
+.LandingPageSection .wrapper .content .bottomContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 5%;
+  width: 100%;
+  color: white;
+}
+
+.backgroundImageOverlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 3;
+  background-color: purple;
+}
+
+.leftAnime {
+  transform: translateX(-25%);
+  transition: transform 300ms linear;
+}
+
+.rightAnime {
+  transform: translateX(25%);
+  transition: transform 300ms linear;
+}
+
+.backgroundMain0 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../../../../public/assets/images/image3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.backgroundMain1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../../../../public/assets/images/image4.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.backgroundMain2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../../../../public/assets/images/image1.webp");
+}
+
+.backgroundMain3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../../../../public/assets/images/image2.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.backgroundMain4 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../../../../public/assets/images/image3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.backgroundMain5 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("../../../../public/assets/images/image5.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.contentPageSection {
+  overflow: hidden;
+}
+.contentPageSection h2,
+.contentPageSection h3 {
+  margin: 0;
+}
+.contentPageSection .siteBanner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+  justify-content: center;
+  min-height: 20vh;
+  background-color: grey;
+  color: white;
+  text-align: center;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  background-image: url("../../../../public/assets/images/banner/banner.jpg");
+}
+.contentPageSection .wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 20px 0 0 0;
+}
+.contentPageSection .wrapper .content {
+  width: 100%;
+}
+.contentPageSection .wrapper .content aside {
+  width: 10%;
+  position: relative;
+  padding: 2% 0;
+}
+.contentPageSection .wrapper .content aside h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.contentPageSection .wrapper .content aside .buttonList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2% 0;
+}
+.contentPageSection .wrapper .content aside .buttonList button {
+  padding: 5% 0;
+  background-color: transparent;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.contentPageSection .wrapper .content .contentMainWrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 0 5%;
+}
+.contentPageSection .wrapper .content .contentReturned {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  padding: 2% 2.5%;
+}
+.contentPageSection .wrapper .content .contentReturned .resultsReturned {
+  width: 100%;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0 4.5%;
+}
+.contentPageSection .wrapper .content .contentList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 350px));
+  grid-gap: 5px 5px;
+  align-items: baseline;
+  width: 100%;
+}
+.contentPageSection .wrapper .content .contentList .contentItem {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  transition: filter 0.5s ease;
+  text-align: center;
+  padding: 10px;
+  opacity: 0;
+}
+.contentPageSection .wrapper .content .contentList .contentItem:hover {
+  filter: contrast(0.7);
+}
+.contentPageSection .wrapper .content .contentList .contentItem p {
+  margin: 10px;
+}
+.contentPageSection .wrapper .content .contentList .contentItem .imageContainer {
+  width: 200px;
+  border: solid black 2px;
+  height: 175px;
+  position: relative;
+}
+.contentPageSection .wrapper .content .contentList .contentItem .imageContainer img {
+  width: 100%;
+  height: 100%;
+}
+.contentPageSection .wrapper .content .contentList .contentItem .imageContainer .bottomBar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+.contentPageSection .wrapper .content .contentList .animationActiveProject {
+  animation: fadein 2s 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+}
+.contentPageSection .wrapper .content .contentList a {
+  color: black;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.contentButtonList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contentButtonList .headerButton {
+  margin-right: 20px;
+}
+.contentButtonList .subMenuButtons {
+  width: 100%;
+  margin-bottom: 5px;
+}
+.contentButtonList .subMenuButtons input {
+  margin-right: 20px;
+}
+.contentButtonList .subMenuButtons label {
+  font-size: 20px;
+}
+
+.scrollButtonContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.scrollButtonContainer .buttonScrollUp {
+  padding: 10px 20px;
+  border: none;
+  outline: solid goldenrod 3px;
+  border-radius: 15px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  z-index: 99;
+}
+.scrollButtonContainer .buttonScrollUp:hover {
+  background-color: green;
+  font-weight: 800;
+}
+
+.navbarContentPage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: black;
+  padding: 0 5%;
+  position: relative;
+  justify-content: space-between;
+}
+.navbarContentPage .searchBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 5%;
+  height: 100%;
+  padding: 15px 0;
+}
+.navbarContentPage .searchBarfocused, .navbarContentPage .searchBaractive {
+  border: solid lightblue 3px;
+}
+.navbarContentPage .searchBar input {
+  background-color: white;
+  padding: 5px;
+  height: 100%;
+  border: none;
+  width: 250px;
+  border: none;
+  outline: none;
+}
+.navbarContentPage .searchBar button {
+  height: 100%;
+  border: none;
+  background-color: white;
+}
+.navbarContentPage .cityButtonList {
+  position: absolute;
+  left: 20%;
+  top: 60px;
+  width: 80%;
+  background-color: grey;
+  z-index: 999;
+  padding: 10px 30px;
+  height: 120px;
+  flex-direction: column;
+  margin: 0;
+  flex-wrap: wrap;
+  border-bottom-left-radius: 25px;
+  outline: black solid 1px;
+}
+.navbarContentPage .cityButtonList li {
+  width: -moz-fit-content;
+  width: fit-content;
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.navbarContentPage .cityButtonList li:hover {
+  color: goldenrod;
+  text-decoration: underline;
+}
+.navbarContentPage .buttonContinent {
+  height: 100%;
+  background-color: transparent;
+  color: white;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  flex-grow: 1;
+}
+
+.Bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 0;
+  width: 100%;
+  min-width: 100px;
+}
+.Bar .dot {
+  height: 24px;
+  width: 12.5%;
+}
+.Bar .grey {
+  background-color: white;
+  outline: solid black 2px;
+}
+.Bar .greyBar {
+  height: 24px;
+  background-color: lightgrey;
+  outline: black solid 2px;
+}
+.Bar .greenBar {
+  height: 24px;
+  background-color: #3dcc79;
+  outline: black solid 2px;
+}
+
+.green {
+  background-color: #3dcc79;
+  outline: solid black 2px;
+}
+
+.displayFlex {
+  display: flex;
+}
+
+.displayNone {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

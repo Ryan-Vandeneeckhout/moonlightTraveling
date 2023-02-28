@@ -1,0 +1,80 @@
+.sideMenu {
+    @include FlexColumnCenter;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    width: 25vw;
+    max-width: 300px;
+    min-width: 250px;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    bottom: 0;
+    z-index: 99;
+    background-color: var(--sideMenucolor);
+    border-right: solid grey 1px;
+    border-top: solid grey 1px;
+
+    .mainMenu {
+        width: 100%;
+    }
+
+    button {
+        align-items: center;
+        border: none;
+        height: 60px;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        color: white;
+        background-color: transparent;
+      &:hover {
+        background-color: slategray;
+        cursor: pointer;
+      }
+    }
+    .mainMenuButton {
+      padding: 0 10%;
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+      .mainMenuContainer {
+        @include Maxsize100;
+        @include FlexColumn;
+
+        button {
+          border: none;
+          height: 60px;
+
+          svg {
+            margin-left: 15px;
+          }
+        }
+
+        button:hover {
+          cursor: pointer;
+        }
+      }
+}
+
+.smoothShown {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    transition: transform 300ms linear;
+}
+  
+.smoothClosed {
+    -webkit-transform: none;
+    transform: none;
+    transition: transform 300ms linear;
+}
+
+.mainMenu,
+.themeMenu,
+.musicMenu {
+  flex-direction: column;
+}
+.fontAweIconSideMenu {
+  margin-right: 10px;
+}
