@@ -2,7 +2,7 @@
     overflow: hidden;
 
     h2,
-    h3 {
+    h3, h4 {
         margin: 0;
     }
 
@@ -16,7 +16,9 @@
         text-align: center;
         background-image: url("../../../../public/assets/images/banner/banner.jpg");
 
-
+h2 {
+    margin-top: 3%;
+}
         h3 {
             font-size: 22px;
             @include textStroke;

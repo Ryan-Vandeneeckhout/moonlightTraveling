@@ -30,9 +30,9 @@ const QuotesApi = () => {
     if (quotes.length > 0) {
       return (
         <>
-          <h3 className="titleQuote">
+          <h4 className="titleQuote">
             {content} - {author}
-          </h3>
+          </h4>
         </>
       );
     } else {

@@ -6,7 +6,6 @@ const Banner = () => {
   return (
     <section className="siteBanner">
       <h2>{SiteName}</h2>
-      <h3>The Travel Planner APP</h3>
       <QuotesApi />
     </section>
   );
